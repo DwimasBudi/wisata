@@ -4,7 +4,7 @@
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
+		{{-- <link rel="shortcut icon" href="img/fav.png"> --}}
 		<!-- Author Meta -->
 		<meta name="author" content="colorlib">
 		<!-- Meta Description -->
@@ -24,7 +24,7 @@
 			<link rel="stylesheet" href="css/font-awesome.min.css">
 			<link rel="stylesheet" href="css/bootstrap.css">
 			<link rel="stylesheet" href="css/magnific-popup.css">
-			<link rel="stylesheet" href="css/animate.min.css">
+			{{-- <link rel="stylesheet" href="css/animate.min.css"> --}}
 			<link rel="stylesheet" href="css/owl.carousel.css">
 			<link rel="stylesheet" href="css/main.css">
 			<link rel="stylesheet" href="css/dbs.css">
@@ -38,8 +38,9 @@
 				<header class="default-header">
 					<nav class="navbar navbar-expand-lg  navbar-light">
 						<div class="container">
-							  <a class="navbar-brand" href="index.html">
+							  <a class="navbar-brand text-white" href="index.html">
 							  	<img src="img/logo.png" alt="">
+									{{-- Pesona Sidorejo --}}
 							  </a>
 							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							    <span class="text-white lnr lnr-menu"></span>
@@ -71,7 +72,7 @@
 				<!-- End Header Area -->				
 			</section>
 			<section class="default-banner active-blog-slider">
-				<div class="item-slider relative" style="background: url(img/slider1.jpg);background-size: cover;">
+				<div class="item-slider relative" style="background: url(storage/images/slider1.jpg);background-size: cover;">
 						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
 						<div class="container">
 							<div class="row fullscreen justify-content-center align-items-center">
@@ -88,7 +89,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="item-slider relative" style="background: url(img/slider2.jpg);background-size: cover;">
+					<div class="item-slider relative" style="background: url(storage/images/slider2.jpg);background-size: cover;">
 						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
 						<div class="container">
 							<div class="row fullscreen justify-content-center align-items-center">
@@ -104,7 +105,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="item-slider relative" style="background: url(img/slider3.jpg);background-size: cover;">
+					<div class="item-slider relative" style="background: url(storage/images/slider3.jpg);background-size: cover;">
 						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
 						<div class="container">
 							<div class="row fullscreen justify-content-center align-items-center">
@@ -131,27 +132,27 @@
 							<p>Embark on an exhilarating hiking adventure in the breathtaking mountain ranges.</p>
 						</li>
 						<li class="card">
-							<img src="images/camping-2.jpg" alt="img">
+							<img src="storage/images/camping-2.jpg" alt="img">
 							<h3>Lakeside Camping</h3>
 							<p>Enjoy a tranquil camping experience by the serene shores of picturesque lakes.</p>
 						</li>
 						<li class="card">
-							<img src="images/camping-3.jpg" alt="img">
+							<img src="storage/images/camping-3.jpg" alt="img">
 							<h3>Beach Camping</h3>
 							<p>Escape to sandy beaches and camp under the starry sky by the crashing waves.</p>
 						</li>
 						<li class="card">
-							<img src="images/camping-4.jpg" alt="img">
+							<img src="storage/images/camping-4.jpg" alt="img">
 							<h3>Forest Exploration</h3>
 							<p>Discover the wonders of lush forests and immerse yourself in nature's beauty.</p>
 						</li>
 						<li class="card">
-							<img src="images/camping-5.jpg" alt="img">
+							<img src="storage/images/camping-5.jpg" alt="img">
 							<h3>RV Camping</h3>
 							<p>Experience the freedom of road trips and camping adventures with our RV rentals.</p>
 						</li>
 						<li class="card">
-							<img src="images/camping-6.jpg" alt="img">
+							<img src="storage/images/camping-6.jpg" alt="img">
 							<h3>Desert Camping</h3>
 							<p>Embark on a unique desert camping experience and witness stunning landscapes.</p>
 						</li>
@@ -170,7 +171,7 @@
 					<div class="owl-slider">
 						<div id="carousel" class="owl-carousel">
 							<div class="item">
-								<img src="img/slider3.jpg" alt="1000X1000" style="width:262.5px; height:262.5px; object-fit:cover;">
+								<img src="storage/images/slider3.jpg" alt="1000X1000" style="width:262.5px; height:262.5px; object-fit:cover;">
 							</div>
 							<div class="item">
 								<img src="img/slider2.jpg" alt="" style="width:262.5px; height:262.5px; object-fit:cover;">

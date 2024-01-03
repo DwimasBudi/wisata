@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
-use App\Models\VisiMisi;
-use App\Models\Sambutan;
 use App\Models\Kontak;
 use App\Models\Comment;
 
@@ -17,8 +15,6 @@ class PostController extends Controller
         return view('index', [
             'posts' => Post::orderBy('id', 'desc')->get(),
             'headline' => Post::orderBy('id', 'asc')->get(),
-            'visi' => VisiMisi::get()->first(),
-            'sambutan' => Sambutan::get()->first(),
             'kontak' => Kontak::get()->first(),
             'categories' => Category::orderBy('name')->get(),
             'title' => 'SDN Kauman Magetan',
@@ -36,8 +32,6 @@ class PostController extends Controller
             'title' => 'SD Negeri Kauman Magetan' . $title,
             // 'posts' => Post::orderBy('created_at', 'desc')->paginate(10),
             'postx' => Post::orderBy('created_at', 'desc')->get(),
-            'visi' => VisiMisi::get()->first(),
-            'sambutan' => Sambutan::get()->first(),
             'kontak' => Kontak::get()->first(),
             'handphone' => Kontak::get()->first()->hp,
             'categories'=> Category::latest()->get()
