@@ -7,9 +7,12 @@ use App\Models\User;
 use App\Models\About;
 use App\Models\Kontak;
 use App\Models\Comment;
+use App\Models\Gallery;
 use App\Models\Category;
+use App\Models\Facility;
 use App\Models\Headline;
 use App\Models\Fasilitas;
+use App\Models\FasilitasWisata;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -50,35 +53,49 @@ class DatabaseSeeder extends Seeder
             'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore consectetur, perspiciatis modi ea in laborum quod vitae quasi maxime excepturi.',
         ]);
         // FASILITAS
-        Fasilitas::create([
+        Facility::create([
             'title' => 'Mountain Hiking',
             'image' => 'images/camping-1.jpg',
             'body' => 'Embark on an exhilarating hiking adventure in the breathtaking mountain ranges.',
         ]);
-        Fasilitas::create([
+        Facility::create([
             'title' => 'Lakeside Camping',
             'image' => 'images/camping-2.jpg',
             'body' => 'Embark on an exhilarating hiking adventure in the breathtaking mountain ranges.',
         ]);
-        Fasilitas::create([
+        Facility::create([
             'title' => 'Beach Camping',
             'image' => 'images/camping-3.jpg',
             'body' => 'Escape to sandy beaches and camp under the starry sky by the crashing waves.',
         ]);
-        Fasilitas::create([
+        Facility::create([
             'title' => 'Forest Exploration',
             'image' => 'images/camping-4.jpg',
             'body' => 'Discover the wonders of lush forests and immerse yourself in natures beauty.',
         ]);
-        Fasilitas::create([
+        Facility::create([
             'title' => 'RV Camping',
             'image' => 'images/camping-5.jpg',
             'body' => 'Experience the freedom of road trips and camping adventures with our RV rentals.',
         ]);
-        Fasilitas::create([
+        Facility::create([
             'title' => 'Desert Camping',
             'image' => 'images/camping-6.jpg',
             'body' => 'Embark on a unique desert camping experience and witness stunning landscapes.',
+        ]);
+        Facility::create([
+            'title' => 'Desert Camping',
+            'image' => 'images/camping-6.jpg',
+            'body' => 'Embark on a unique desert camping experience and witness stunning landscapes.',
+        ]);
+        Gallery::create([
+            'image' => 'images/slider1.jpg',
+        ]);
+        Gallery::create([
+            'image' => 'images/slider2.jpg',
+        ]);
+        Gallery::create([
+            'image' => 'images/slider3.jpg',
         ]);
         About::create([
             'title' => 'We Realize that there are reduced Wastege Stand out',

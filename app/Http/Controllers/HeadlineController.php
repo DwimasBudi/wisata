@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Headline;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HeadlineController extends Controller
 {
@@ -59,7 +60,9 @@ class HeadlineController extends Controller
      */
     public function edit(Headline $headline)
     {
-        //
+        return view("dashboard.headline.edit", [
+            'headline' => $headline,
+        ]);
     }
 
     /**
@@ -71,7 +74,21 @@ class HeadlineController extends Controller
      */
     public function update(Request $request, Headline $headline)
     {
-        //
+        $rules = [
+            'title' => 'required|max:255|min:4',
+            'image' => 'image|file|max:5024',
+            'body' => 'required',
+        ];
+        $validatedData = $request->validate($rules);
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('images');
+        }
+        Headline::where('id', $headline->id)->update($validatedData);
+
+        return redirect('/dashboard/headline')->with('success', 'Headline Has been updated');
     }
 
     /**

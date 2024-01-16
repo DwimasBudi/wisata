@@ -7,16 +7,19 @@ use Illuminate\Http\Request;
 use Spatie\Sitemap\Tags\Url;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\KontakController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\FacilityController;
 use App\Http\Controllers\HeadlineController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\FasilitasWisataController;
 use App\Http\Controllers\CategoryDashboardController;
 
 /*
@@ -30,7 +33,7 @@ use App\Http\Controllers\CategoryDashboardController;
 |
 */
 
-Route::get('/', [PostController::class, 'index']);
+Route::get('/', [MainController::class, 'index']);
 
 Route::get('/admin', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate'])->middleware('throttle:loginc');
@@ -40,8 +43,9 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::resource('/dashboard/comment', CommentController::class)->middleware('auth');
 Route::resource('/dashboard/headline', HeadlineController::class)->middleware('auth');
-Route::resource('/dashboard/fasilitas', FasilitasController::class)->middleware('auth');
+// Route::resource('/dashboard/fasilitas', FacilityController::class)->middleware('auth');
 Route::resource('/dashboard/gallery', GalleryController::class)->middleware('auth');
+Route::resource('/dashboard/facility', FacilityController::class)->middleware('auth');
 Route::resource('/dashboard/about', AboutController::class)->middleware('auth');
 Route::get('/dashboard/kontak/edit', [KontakController::class, 'show'])->middleware('auth');
 Route::post('/dashboard/kontak/update', [KontakController::class, 'update'])->middleware('auth');

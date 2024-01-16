@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryController extends Controller
 {
@@ -14,7 +15,9 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view("dashboard.gallery.index", []);
+        return view("dashboard.gallery.index", [
+            'gallery' => Gallery::latest()->get()
+        ]);
     }
 
     /**
@@ -35,7 +38,17 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'image' => 'image|file|max:5024',
+        ];
+
+        $validatedData = $request->validate($rules);
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('images');
+        }
+        Gallery::create($validatedData);
+
+        return redirect('/dashboard/gallery')->with('success', 'New image has been added');
     }
 
     /**
@@ -57,7 +70,7 @@ class GalleryController extends Controller
      */
     public function edit(Gallery $gallery)
     {
-        //
+        dd($gallery);
     }
 
     /**

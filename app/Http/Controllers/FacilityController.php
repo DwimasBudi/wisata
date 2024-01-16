@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fasilitas;
+use App\Models\Facility;
 use Illuminate\Http\Request;
 
-class FasilitasController extends Controller
+class FacilityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class FasilitasController extends Controller
     public function index()
     {
         return view("dashboard.fasilitas.index", [
-            'fasilitases' => Fasilitas::latest()->get()
+            'fasilitas' => Facility::latest()->get()
         ]);
     }
 
@@ -43,10 +43,10 @@ class FasilitasController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Fasilitas  $fasilitas
+     * @param  \App\Models\Facility  $facility
      * @return \Illuminate\Http\Response
      */
-    public function show(Fasilitas $fasilitas)
+    public function show(Facility $facility)
     {
         //
     }
@@ -54,22 +54,25 @@ class FasilitasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Fasilitas  $fasilitas
+     * @param  \App\Models\Facility  $facility
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fasilitas $fasilitas)
+    public function edit(Facility $facility)
     {
-        //
+        // dd($facility);
+        return view("dashboard.fasilitas.edit", [
+            'fasilitas' => $facility,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Fasilitas  $fasilitas
+     * @param  \App\Models\Facility  $facility
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fasilitas $fasilitas)
+    public function update(Request $request, Facility $facility)
     {
         //
     }
@@ -77,10 +80,10 @@ class FasilitasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Fasilitas  $fasilitas
+     * @param  \App\Models\Facility  $facility
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fasilitas $fasilitas)
+    public function destroy(Facility $facility)
     {
         //
     }

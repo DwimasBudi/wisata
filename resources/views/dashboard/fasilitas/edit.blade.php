@@ -8,16 +8,16 @@
 </div>
 @endif
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-5 mt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2"><i class="uil uil-megaphone"></i> Headline</h1>
+    <h1 class="h2"><i class="uil uil-megaphone"></i> Fasilitas</h1>
 </div>
 <div class="col-lg-12">
     {{-- /dashboard/posts + method POST otomais ke method store --}}
-<form action="/dashboard/headline/{{ $headline->id }}" method="post" class="mb-5" enctype="multipart/form-data">
+<form action="/dashboard/fasilitas/{{ $fasilitas->id }}" method="post" class="mb-5" enctype="multipart/form-data">
     @method("put")
     @csrf
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
-    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Headline Title" autofocus value="{{ old('title',$headline->title) }}">
+    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Headline Title" autofocus value="{{ old('title',$fasilitas->title) }}">
     @error('title')
         <div class="invalid-feedback">
             {{$message}}
@@ -26,8 +26,8 @@
   </div>
   <div class="mb-3">
         <label for="image" class="form-label">image :</label>
-        <input type="hidden" name="oldImage" value="{{ $headline->image }}"> 
-        <img src="{{ asset('storage/'.$headline->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
+        <input type="hidden" name="oldImage" value="{{ $fasilitas->image }}"> 
+        <img src="{{ asset('storage/'.$fasilitas->image) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block">
         <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage()">
     @error('image')
         <div class="invalid-feedback">
@@ -44,7 +44,7 @@
         </p> 
     @enderror
         <textarea name="body" id="body" cols="1" rows="1" required>
-          {{ old("body",$headline->body) }}
+          {{ old("body",$fasilitas->body) }}
         </textarea>
   </div>
 

@@ -15,8 +15,8 @@
         <img src="/storage/{{ $head->image }}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title" >{{ $head->title }}</h5>
-          <p class="card-text" >{{ $head->body }}</p>
-          <a href="#" class="btn btn-primary"><i class="bi bi-pencil"></i> UBAH</a>
+          <p class="card-text" >{!! $head->body !!}</p>
+          <a href="/dashboard/headline/{{ $head->id }}/edit" class="btn btn-primary"><i class="bi bi-pencil"></i> UBAH</a>
         </div>
       </div>
       @endforeach

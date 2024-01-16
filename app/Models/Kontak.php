@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Kontak extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
+    protected $fillable = [
+        // Other fillable attributes here
+        'image',
+    ];
     public $timestamps = false;
 }

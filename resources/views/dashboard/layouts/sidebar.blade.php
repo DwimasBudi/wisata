@@ -22,7 +22,7 @@
                     <i class="uil uil-archway"></i>
                     <span class="link-name">Headline</span>
                 </a></li>
-                <li><a {{ Request::is("dashboard/fasilitas*") ? "class=active" : "" }} href="/dashboard/fasilitas/">
+                <li><a {{ Request::is("dashboard/facility*") ? "class=active" : "" }} href="/dashboard/facility/">
                     <i class="uil uil-building"></i>
                     <span class="link-name">Fasilitas</span>
                 </a></li>

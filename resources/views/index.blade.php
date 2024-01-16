@@ -72,55 +72,26 @@
 				<!-- End Header Area -->				
 			</section>
 			<section class="default-banner active-blog-slider">
-				<div class="item-slider relative" style="background: url(storage/images/slider1.jpg);background-size: cover;">
-						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
+				@foreach ($headline as $item)
+						
+				<div class="item-slider relative" style="background: url(storage/{{ $item->image }});background-size: cover;">
+					<div class="overlay" style="background: rgba(0,0,0,.5)"></div>
 						<div class="container">
 							<div class="row fullscreen justify-content-center align-items-center">
 								<div class="col-md-10 col-12">
 									<div class="banner-content text-center">
 										<h4 class="text-white mb-20 text-uppercase">Bumi perkemahan Gendingan</h4>
-										<h1 class="text-uppercase text-white">New Adventure</h1>
-										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
-										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-										<a href="https://www.google.com/maps/dir//Bumi+perkemahan+Gendingan+Unnamed+Road+Wonokerti,+Karanggupito+Kec.+Kendal,+Kabupaten+Ngawi,+Jawa+Timur+63262/@-7.5733422,111.2603008,15z/data=!4m5!4m4!1m0!1m2!1m1!1s0x2e79f378243ffcbb:0x5df23940c4cba7e7" class="text-uppercase header-btn">Discover Now</a>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-					<div class="item-slider relative" style="background: url(storage/images/slider2.jpg);background-size: cover;">
-						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
-						<div class="container">
-							<div class="row fullscreen justify-content-center align-items-center">
-								<div class="col-md-10 col-12">
-									<div class="banner-content text-center">
-										<h4 class="text-white mb-20 text-uppercase">Bumi perkemahan Gendingan</h4>
-										<h1 class="text-uppercase text-white">New Trip</h1>
-										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
-										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+										<h1 class="text-uppercase text-white">{{ $item->title }}</h1>
+										<div class="text-white" style="color: white;">{!! $item->body !!}</div>
+											<br>
 										<a href="https://www.google.com/maps/dir//Bumi+perkemahan+Gendingan+Unnamed+Road+Wonokerti,+Karanggupito+Kec.+Kendal,+Kabupaten+Ngawi,+Jawa+Timur+63262/@-7.5733422,111.2603008,15z/data=!4m5!4m4!1m0!1m2!1m1!1s0x2e79f378243ffcbb:0x5df23940c4cba7e7" class="text-uppercase header-btn">Discover Now</a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="item-slider relative" style="background: url(storage/images/slider3.jpg);background-size: cover;">
-						<div class="overlay" style="background: rgba(0,0,0,.3)"></div>
-						<div class="container">
-							<div class="row fullscreen justify-content-center align-items-center">
-								<div class="col-md-10 col-12">
-									<div class="banner-content text-center">
-										<h4 class="text-white mb-20 text-uppercase">Bumi perkemahan Gendingan</h4>
-										<h1 class="text-uppercase text-white">New Experience</h1>
-										<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br>
-										or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
-										<a href="https://www.google.com/maps/dir//Bumi+perkemahan+Gendingan+Unnamed+Road+Wonokerti,+Karanggupito+Kec.+Kendal,+Kabupaten+Ngawi,+Jawa+Timur+63262/@-7.5733422,111.2603008,15z/data=!4m5!4m4!1m0!1m2!1m1!1s0x2e79f378243ffcbb:0x5df23940c4cba7e7" class="text-uppercase header-btn">Discover Now</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					@endforeach
+					
 				</section>
 				<section class="portfolio" id="portfolio">
 					<h2>Fasilitas</h2>
