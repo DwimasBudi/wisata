@@ -12,13 +12,13 @@
 </div>
 <div class="col-lg-12">
     {{-- /dashboard/posts + method POST otomais ke method store --}}
-<form action="/dashboard/fasilitas/{{ $fasilitas->id }}" method="post" class="mb-5" enctype="multipart/form-data">
+<form action="/dashboard/facility/{{ $fasilitas->id }}" method="post" class="mb-5" enctype="multipart/form-data">
     @method("put")
     @csrf
   <div class="mb-3">
-    <label for="title" class="form-label">Title</label>
-    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Headline Title" autofocus value="{{ old('title',$fasilitas->title) }}">
-    @error('title')
+    <label for="nama" class="form-label">Nama Fasilitas :</label>
+    <input type="text" name="nama" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Headline Title" autofocus value="{{ old('title',$fasilitas->nama) }}">
+    @error('nama')
         <div class="invalid-feedback">
             {{$message}}
         </div> 

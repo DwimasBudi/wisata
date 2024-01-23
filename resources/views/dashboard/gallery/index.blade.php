@@ -9,7 +9,7 @@
   {{ session('success') }}
 </div>
 @endif
-<div class="col-lg-12 mx-5 mb-2">
+<div class="col-lg-12 mb-2">
   <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Tambah Gambar
@@ -54,7 +54,13 @@
         <div class="card-body">
             {{-- <h5 class="card-title">Headline 1</h5> --}}
             {{-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-            <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i> HAPUS</a>
+            <form action="/dashboard/gallery/{{ $item->id }}" method="post" class="d-inline">
+                  @method('delete')
+                  @csrf
+                  <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><i class="bi bi-trash"></i> HAPUS</button>
+                   {{-- <a href="" class="badge text-bg-danger"></a> --}}
+            </form>
+            {{-- <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i> HAPUS</a> --}}
           </div>
         </div>
         @endforeach

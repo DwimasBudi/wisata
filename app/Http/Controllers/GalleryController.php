@@ -93,6 +93,13 @@ class GalleryController extends Controller
      */
     public function destroy(Gallery $gallery)
     {
-        //
+        $gallery = Gallery::find($gallery->id);
+        
+        if ($gallery->image) {
+            Storage::delete($gallery->image);
+        }
+
+        Gallery::destroy($gallery->id);
+        return redirect('/dashboard/gallery')->with('success', 'Image has been deleted');
     }
 }

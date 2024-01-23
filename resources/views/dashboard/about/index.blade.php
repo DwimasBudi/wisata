@@ -11,8 +11,9 @@
 @endif
 <div class="col-lg-12">
     {{-- /dashboard/posts + method POST otomais ke method store --}}
-  <form action="/dashboard/sambutan/update" method="post" class="mb-5" enctype="multipart/form-data">
-      @csrf
+  <form action="/dashboard/about/{{ $about->id }}" method="post" class="mb-5" enctype="multipart/form-data">
+    @method("put")  
+    @csrf
     <div class="mb-3">
           <label for="image" class="form-label">image :</label>
           <input type="hidden" name="oldImage" value="{{ $about->image }}"> 
@@ -24,21 +25,38 @@
           </div> 
       @enderror
     </div>
-      
     <div class="mb-3">
-      <label for="sambutan" class="form-label">Sambutan : </label>
+      <label for="title" class="form-label">Title</label>
+      <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="New Post Title" value="{{ old('title',$about->title) }}">
+      @error('title')
+          <div class="invalid-feedback">
+              {{$message}}
+          </div> 
+      @enderror
+    </div>
+    <div class="mb-3">
+      <label for="video" class="form-label">Youtube Link:</label>
+      <input type="text" name="video" class="form-control @error('video') is-invalid @enderror" id="title" placeholder="New Post Title" value="{{ old('title',$about->video) }}">
+      @error('video')
+          <div class="invalid-feedback">
+              {{$message}}
+          </div> 
+      @enderror
+    </div>
+    <div class="mb-3">
+      <label for="body" class="form-label">Body : </label>
       @error('sambutan')
           <p class="text-danger">
               {{$message}}
           </p> 
       @enderror
-          <textarea name="sambutan" id="sambutan" cols="1" rows="1" required>
+          <textarea name="body" id="body" cols="1" rows="1" required>
             {{ old("visi",$about->body) }}
           </textarea>
     </div>
 
 
-    <button type="submit" class="btn btn-primary mt-3">Update Sambutan</button>
+    <button type="submit" class="btn btn-primary mt-3">Update About</button>
   </form>
 </div>
 @endsection

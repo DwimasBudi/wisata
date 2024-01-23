@@ -40,16 +40,16 @@
             {{$message}}
         </div> 
     @enderror
-  {{-- </div>
-    <div class="mb-3">
-    <label for="fax" class="form-label">fax : </label>
-    <input type="text" name="fax" class="form-control @error('fax') is-invalid @enderror" id="fax" placeholder="fax" autofocus value="{{ old('fax',$kontak->fax) }}">
-    @error('fax')
+  </div>
+<div class="mb-3">
+    <label for="jam" class="form-label">jam Buka : </label>
+    <input type="text" name="jam" class="form-control @error('jam') is-invalid @enderror" id="jam" placeholder="Jam Buka" autofocus value="{{ old('fax',$kontak->jam) }}">
+    @error('jam')
         <div class="invalid-feedback">
             {{$message}}
         </div> 
     @enderror
-  </div> --}}
+  </div>
 
 
   <button type="submit" class="btn btn-primary mt-3">Update Kontak</button>

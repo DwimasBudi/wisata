@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AboutController extends Controller
 {
@@ -72,7 +73,24 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
+        // dd($request);
+        $rules = [
+            'title' => 'required',
+            'video' => 'required',
+            'body' => 'required',
+        ];
+        $validatedData = $request->validate($rules);
 
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('images');
+        }
+        // dd($validatedData);
+        About::where('id', $about->id)->update($validatedData);
+
+        return redirect('/dashboard/about')->with('success', 'About Has been updated');
     }
 
     /**

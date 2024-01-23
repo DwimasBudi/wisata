@@ -38,8 +38,8 @@
 				<header class="default-header">
 					<nav class="navbar navbar-expand-lg  navbar-light">
 						<div class="container">
-							  <a class="navbar-brand text-white" href="index.html">
-							  	<img src="img/logo.png" alt="">
+							  <a class="navbar-brand text-white" href="{{ asset('/') }}">
+							  	<img src="storage/images/gendingan.png" alt="">
 									{{-- Pesona Sidorejo --}}
 							  </a>
 							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,14 +48,14 @@
 
 							  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 							    <ul class="navbar-nav">
-									<li><a href="#home">Home</a></li>
-									<li><a href="#about">About</a></li>									
-									<li><a href="#secvice">Service</a></li>
+									<li><a href="{{ asset('/') }}">Home</a></li>
+									<li><a href="#fasilitas">Fasilitas</a></li>									
 									<li><a href="#gallery">Gallery</a></li>
-									<li><a href="#faq">Faq</a></li>
+									{{-- <li><a href="#gallery">Gallery</a></li> --}}
+									{{-- <li><a href="#faq">Faq</a></li> --}}
 									<li><a href="#contact">Contact</a></li>
 									<!-- Dropdown -->
-								    <li class="dropdown">
+								    {{-- <li class="dropdown">
 								      <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
 								        Pages
 								      </a>
@@ -63,7 +63,7 @@
 												<a class="dropdown-item" href="generic.html">Generic</a>
 								        <a class="dropdown-item" href="elements.html">Elements</a>
 								      </div>
-								    </li>
+								    </li> --}}
 							    </ul>
 							  </div>						
 						</div>
@@ -93,109 +93,61 @@
 					@endforeach
 					
 				</section>
-				<section class="portfolio" id="portfolio">
+				<section class="portfolio" id="fasilitas">
 					<h2>Fasilitas</h2>
-					<p>Take a look at some of our memorable camping adventures.</p>
+					{{-- <p>Take a look at some of our memorable camping adventures.</p> --}}
 					<ul class="cards">
+						@foreach ($fasilitas as $fase)
 						<li class="card">
-							<img src="images/camping-1.jpg" alt="img">
-							<h3>Mountain Hiking</h3>
-							<p>Embark on an exhilarating hiking adventure in the breathtaking mountain ranges.</p>
+							<img src="storage/{{ $fase->image }}" alt="img">
+							<h3>{{ $fase->nama }}</h3>
+							{!! $fase->body !!}
 						</li>
-						<li class="card">
-							<img src="storage/images/camping-2.jpg" alt="img">
-							<h3>Lakeside Camping</h3>
-							<p>Enjoy a tranquil camping experience by the serene shores of picturesque lakes.</p>
-						</li>
-						<li class="card">
-							<img src="storage/images/camping-3.jpg" alt="img">
-							<h3>Beach Camping</h3>
-							<p>Escape to sandy beaches and camp under the starry sky by the crashing waves.</p>
-						</li>
-						<li class="card">
-							<img src="storage/images/camping-4.jpg" alt="img">
-							<h3>Forest Exploration</h3>
-							<p>Discover the wonders of lush forests and immerse yourself in nature's beauty.</p>
-						</li>
-						<li class="card">
-							<img src="storage/images/camping-5.jpg" alt="img">
-							<h3>RV Camping</h3>
-							<p>Experience the freedom of road trips and camping adventures with our RV rentals.</p>
-						</li>
-						<li class="card">
-							<img src="storage/images/camping-6.jpg" alt="img">
-							<h3>Desert Camping</h3>
-							<p>Embark on a unique desert camping experience and witness stunning landscapes.</p>
-						</li>
+						@endforeach
 					</ul>
 				</section>
-				<section class="section bg-default text-center offset-top-50 p-5 bg-gray-36">
+				<section id="gallery" class="section bg-default text-center offset-top-50 p-5 bg-gray-36">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-60 col-lg-8">
 							<div class="title text-center">
 								<h1 class="mb-10">Gallery</h1>
-								<p>Who are in extremely love with eco friendly system.</p>
+								{{-- <p>Who are in extremely love with eco friendly system.</p> --}}
 							</div>
 						</div>
 					</div>
 					<div class="owl-slider">
 						<div id="carousel" class="owl-carousel">
+							@foreach ($galleries as $gallery)
 							<div class="item">
-								<img src="storage/images/slider3.jpg" alt="1000X1000" style="width:262.5px; height:262.5px; object-fit:cover;">
+								<img src="storage/{{ $gallery->image }}" alt="1000X1000" style="width:262.5px; height:262.5px; object-fit:cover;">
 							</div>
-							<div class="item">
-								<img src="img/slider2.jpg" alt="" style="width:262.5px; height:262.5px; object-fit:cover;">
-							</div>
-							<div class="item">
-								<img src="img/slider3.jpg" alt="1000X1000" style="width:262.5px; height:262.5px; object-fit:cover;">
-							</div>
-							<div class="item">
-								<img src="img/slider2.jpg" alt="" style="width:262.5px; height:262.5px; object-fit:cover;">
-							</div>
-							<div class="item">
-								<img src="img/slider3.jpg" alt="1000X1000" style="width:262.5px; height:262.5px; object-fit:cover;">
-							</div>
-							<div class="item">
-								<img src="img/slider2.jpg" alt="" style="width:262.5px; height:262.5px; object-fit:cover;">
-							</div>
+							@endforeach
 						</div>
 					</div>
 				</section>
 
 			<section class="section-gap info-area" id="about">
 				<div class="container">
-					<div class="row d-flex justify-content-center">
+					{{-- <div class="row d-flex justify-content-center">
 						<div class="menu-content pb-40 col-lg-8">
 							<div class="title text-center">
 								<h1 class="mb-10">Tentang Kami</h1>
 								<p>Who are in extremely love with eco friendly system.</p>
 							</div>
 						</div>
-					</div>					
+					</div>					 --}}
 					<div class="single-info row mt-40">
 						<div class="col-lg-6 col-md-12 mt-120 text-center no-padding info-left">
 							<div class="info-thumb">
-								<img src="img/about-img.jpg" class="img-fluid" alt="" style="filter: brightness(50%)">
-                                <a href="https://youtube.com/watch?v=lOKASgtr6kU" class="play-btn" style="position: absolute; top:50%; right:40%;"><img src="img/play-btn.png" alt=""></a>
+								<img src="storage/{{ $about->image }}" class="img-fluid" alt="" style="filter: brightness(50%)">
+                                <a href="{{ $about->video }}" class="play-btn" style="position: absolute; top:50%; right:40%;"><img src="img/play-btn.png" alt=""></a>
 							</div>
 						</div>
 						<div class="col-lg-6 col-md-12 no-padding info-rigth">
 							<div class="info-content">
-								<h2 class="pb-30">We Realize that <br>
-								there are reduced <br>
-								Wastege Stand out</h2>
-								<p>
-									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women.									
-								</p>
-								<br>
-								<p>
-									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women. inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women.									
-								</p>
-								<br>
-								<p>
-									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards – especially in the workplace. That’s why it’s crucial that, as women.
-								</p>
+								<h2 class="pb-30">{{ $about->title }}</h2>
+								{!! $about->body !!}
 								</div>
 						</div>
 					</div>
@@ -204,24 +156,25 @@
 
 		<section class="contact" id="contact" ">
 			<h2>Contact Us</h2>
-			<p>Reach out to us for any inquiries or feedback.</p>
+			{{-- <p>Reach out to us for any inquiries or feedback.</p> --}}
 			<div class="row">
 				<div class="col-lg-12 col-sm-6" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
 					<div class="information" style="width: 500px;">
 						<div class="contact-details">
-							<p><i class="fas fa-map-marker-alt"></i> 123 Campsite Avenue, Wilderness, CA 98765</p>
-							<p><i class="fas fa-envelope"></i> info@campinggearexperts.com</p>
-							<p><i class="fas fa-phone"></i> (123) 456-7890</p>
-							<p><i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 5:00 PM</p>
-							<p><i class="fas fa-clock"></i> Saturday: 10:00 AM - 3:00 PM</p>
-							<p><i class="fas fa-clock"></i> Sunday: Closed</p>
-							<p><i class="fas fa-globe"></i> www.codingenpalweb.com</p>
+							<p><i class="fas fa-map-marker-alt"></i> {{ $kontak->alamat }}</p>
+							<p><i class="fas fa-envelope"></i> {{ $kontak->email }}</p>
+							<p><i class="fas fa-phone"></i> {{ $kontak->hp }}</p>
+							<p><i class="fas fa-clock"></i> {{ $kontak->jam }}</p>
+							{{-- <p><i class="fas fa-clock"></i> Saturday: 10:00 AM - 3:00 PM</p> --}}
+							{{-- <p><i class="fas fa-clock"></i> Sunday: Closed</p> --}}
+							<p><i class="fas fa-globe"></i> {{ asset('/') }}</p>
 						</div>
 					</div>
 					<div class="form" style="width: 500px; overflow: hidden;">
-					<iframe src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25849.557346854865!2d111.25952039888199!3d-7.558045041618607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79f38ccf8fea75%3A0xa7ff225dc2000f5d!2sKantor%20Desa%20Sidorejo!5e0!3m2!1sid!2sid!4v1703396338442!5m2!1sid!2sid"
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.0150540024447!2d111.25772587380162!3d-7.573336874805329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79f378243ffcbb%3A0x5df23940c4cba7e7!2sBumi%20perkemahan%20Gendingan!5e0!3m2!1sid!2sid!4v1706013863746!5m2!1sid!2sid"width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					{{-- <iframe src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25849.557346854865!2d111.25952039888199!3d-7.558045041618607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79f38ccf8fea75%3A0xa7ff225dc2000f5d!2sKantor%20Desa%20Sidorejo!5e0!3m2!1sid!2sid!4v1703396338442!5m2!1sid!2sid"
 						width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"></iframe>
+						referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
 					</div>
 				</div>
 				

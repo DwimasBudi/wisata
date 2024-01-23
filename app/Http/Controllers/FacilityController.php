@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Facility;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FacilityController extends Controller
 {
@@ -37,7 +38,20 @@ class FacilityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $validatedData = $request->validate([
+            'nama' => 'required', // Change 'title' to 'nama'
+            'image' => 'required|image|file|max:5024',
+            'body' => 'required',
+        ]);
+
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('images');
+        }
+        // dd($validatedData);
+        Facility::create($validatedData);
+
+        return redirect('/dashboard/facility')->with('success', 'New Facility has been added');
     }
 
     /**
@@ -74,7 +88,22 @@ class FacilityController extends Controller
      */
     public function update(Request $request, Facility $facility)
     {
-        //
+        $rules = [
+            'nama' => 'required',
+            'body' => 'required',
+        ];
+        $validatedData = $request->validate($rules);
+
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('images');
+        }
+        // dd($validatedData);
+        Facility::where('id', $facility->id)->update($validatedData);
+
+        return redirect('/dashboard/facility')->with('success', 'Facility Has been updated');
     }
 
     /**
@@ -85,6 +114,13 @@ class FacilityController extends Controller
      */
     public function destroy(Facility $facility)
     {
-        //
+        $facility = Facility::find($facility->id);
+
+        if ($facility->image) {
+            Storage::delete($facility->image);
+        }
+
+        Facility::destroy($facility->id);
+        return redirect('/dashboard/facility')->with('success', 'Facility has been deleted');
     }
 }
