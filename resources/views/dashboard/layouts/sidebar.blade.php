@@ -10,13 +10,13 @@
 
         <div class="menu-items">
             <ul class="nav-links" style="padding-left:0;">
-                <li><a {{ Request::is("dashboard") ? "class=active" : "" }} href="/dashboard/">
+                {{-- <li><a {{ Request::is("dashboard") ? "class=active" : "" }} href="/dashboard/">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dahsboard</span>
-                </a></li>
+                </a></li> --}}
                 <li><a href="/">
                     <i class="uil uil-globe"></i>
-                    <span class="link-name">Website</span>
+                    <span class="link-name">Web</span>
                 </a></li>
                 <li><a {{ Request::is("dashboard/headline*") ? "class=active" : "" }} href="/dashboard/headline/">
                     <i class="uil uil-archway"></i>

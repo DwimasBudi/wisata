@@ -1,20 +1,30 @@
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
-		{{-- <link rel="shortcut icon" href="img/fav.png"> --}}
-		<!-- Author Meta -->
-		<meta name="author" content="colorlib">
-		<!-- Meta Description -->
-		<meta name="description" content="">
-		<!-- Meta Keyword -->
-		<meta name="keywords" content="">
-		<!-- meta character set -->
-		<meta charset="UTF-8">
-		<!-- Site Title -->
-		<title>Pesona Sidorejo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Primary Meta Tags -->
+    <title>Bumi Perkemahan Gendingan Surya Bakti</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+    <meta name="title" content="Bumi Perkemahan Gendingan Surya Bakti" />
+    <meta name="description" content="Wisata Bumi Perkemahan Gendingan Surya Bakti Sidorejo Kendal" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ asset('/') }}" />
+    <meta property="og:title" content="Bumi Perkemahan Gendingan Surya Bakti" />
+    <meta property="og:description" content="Wisata Bumi Perkemahan Gendingan Surya Bakti Sidorejo Kendal" />
+    <meta property="og:image" content="{{ asset('storage/images/kolam-anak.jpg') }}" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ asset('storage/images/kolam-anak.jpg') }}" />
+    <meta property="twitter:title" content="Bumi Perkemahan Gendingan Surya Bakti" />
+    <meta property="twitter:description" content="Wisata Bumi Perkemahan Gendingan Surya Bakti Sidorejo Kendal" />
+    <meta property="twitter:image" content="{{ asset('storage/images/kolam-anak.jpg') }}" />
+
+		
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--
@@ -191,7 +201,7 @@
 			</section>
 			<!-- End logo Area -->
 			<!-- start footer Area -->		
-			<footer class="footer-area section-gap">
+			{{-- <footer class="footer-area section-gap">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-5 col-md-6 col-sm-6">
@@ -246,7 +256,7 @@
 						</div>							
 					</div>
 				</div>
-			</footer>	
+			</footer>	 --}}
 			<!-- End footer Area -->			
 
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
