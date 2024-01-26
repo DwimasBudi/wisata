@@ -130,7 +130,7 @@
 						<div id="carousel" class="owl-carousel">
 							@foreach ($galleries as $gallery)
 							<div class="item">
-								<img src="storage/{{ $gallery->image }}" alt="1000X1000" style="width:262.5px; height:262.5px; object-fit:cover;">
+								<img src="storage/{{ $gallery->image }}" alt="1000X1000">
 							</div>
 							@endforeach
 						</div>
